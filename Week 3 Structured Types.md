@@ -51,7 +51,7 @@ def get_data(aTuple):
      return(min_nums, max_nums, unique_words)
 ```
  
-2. Lists
+##2. Lists
 
 + An ordered sequenceof information, accessible by index, denoted by square brackets,  [ ]
 Contains elemtns that usually are homogenous (can contain mixed types) 
@@ -124,3 +124,66 @@ L.reverse
     - range (5)   -> [0,1,2,3,4] tuple
       range (5, 2, -1) -> [5, 4, 3] tuple
     - when use _range_ in a _for_loop, what the loop variable iterates over behaves like a list
+    
+
+##4. Mutation, Aliasing, Cloning
+
+* List in Memory: mutable, an object, variable name points to object, __side effects of lists__
+
+* An analogy: attributes of a person
+
+```python
+warm = ['red', 'yellow', 'orange']
+hot = warm
+hot.append('pink')
+
+#hot is an alias for warm, so warm evalutes to the new hot
+```
+
+* PRINT is not ==
+
+```python
+cool = ['blue', 'green', 'grey']
+chill = ['blue', 'green', 'grey']
+chill[2] = 'blue'
+print cool
+
+#names are the same but the structures are different by checking mutation 
+```
+
+* Cloning a list
+```python
+chill = cool[:]
+chill.append('black')
+print(cool)
+```
+
+* Sorting lists
+ * calling sort() **mutates** the list,returns nothing
+ * calling sorted() **does not mutate** list, must assign  to a variable
+
+* LISTS OF LISTS OF LISTS OF...
+ * can have **nested** lists. Side effects possible after mutation
+ 
+
+* Mutation And Iteration: avoid mutating a list over which one is iterating
+
+```python
+def remove_dups(L1,L2)
+      for e in L1:
+           if e in L2:
+                 L1.remove(e)
+
+L1 = [1, 2, 3, 4]
+L2 = [1, 2, 5, 6]
+removes_dups(L1, L2)
+#L1 is [2, 3, 4] 
+#The internal counter is used, and loop never sees element 2 
+
+# The solution is to colone list first
+def remove_dups(L1,L2)
+      L1_copy = L1[:]
+      for e in L1:
+           if e in L2:
+                 L1.remove(e)
+```
