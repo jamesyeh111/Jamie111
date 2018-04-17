@@ -187,3 +187,7 @@ def remove_dups(L1,L2)
            if e in L2:
                  L1.remove(e)
 ```
+
+* ['is'  and '==' in Python](https://stackoverflow.com/questions/132988/is-there-a-difference-between-and-is-in-python)
+ * **is** operator is used to determine if two different names refer to the same object。 If the same project goes by two different names, this is known as **_aliasing_**
+ * **== **operator only checks to see if two different objects have the same value
