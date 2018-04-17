@@ -51,7 +51,7 @@ def get_data(aTuple):
      return(min_nums, max_nums, unique_words)
 ```
  
-##2. Lists
+## 2.Lists
 
 + An ordered sequenceof information, accessible by index, denoted by square brackets,  [ ]
 Contains elemtns that usually are homogenous (can contain mixed types) 
@@ -78,7 +78,7 @@ total = 0
 #remember iteration from 0 to n-1 
 ```
 
-##3. List Operations
+## 3. List Operations
 
 
 * example
@@ -126,7 +126,7 @@ L.reverse
     - when use _range_ in a _for_loop, what the loop variable iterates over behaves like a list
     
 
-##4. Mutation, Aliasing, Cloning
+## 4. Mutation, Aliasing, Cloning
 
 * List in Memory: mutable, an object, variable name points to object, __side effects of lists__
 
